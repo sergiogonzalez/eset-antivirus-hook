@@ -1,4 +1,4 @@
-eset-antivirus-hook
+ESET Antivirus Hook
 ===================
 
-Eset Antivirus Hook for Liferay 6.1
+Integrate ESET Antivirus with Liferay 6.1 to include virus detection when adding documents to Liferay.
