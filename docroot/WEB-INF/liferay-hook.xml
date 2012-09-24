@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.1.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_1_0.dtd">
+
+<hook>
+	<portal-properties>portal.properties</portal-properties>
+	<language-properties>
+		content/Language_en.properties
+	</language-properties>
+	<language-properties>
+		content/Language_es.properties
+	</language-properties>
+	<custom-jsp-dir>/custom_jsps</custom-jsp-dir>
+	<struts-action>
+		<struts-action-path>/document_library/edit_file_entry</struts-action-path>
+		<struts-action-impl>com.sympo.documentlibrary.action.EditFileEntryAction</struts-action-impl>
+	</struts-action>
+</hook>
