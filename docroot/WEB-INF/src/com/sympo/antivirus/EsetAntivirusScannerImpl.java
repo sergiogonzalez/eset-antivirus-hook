@@ -55,15 +55,7 @@ public class EsetAntivirusScannerImpl extends BaseFileAntivirusScanner {
 
 			int exitValue = process.exitValue();
 
-			if (exitValue == 10) {
-				if (_log.isErrorEnabled()) {
-					_log.error(scanResult);
-				}
-
-				throw new AntivirusScannerException(
-					"Couldn't scan file in " + filePath);
-			}
-			else if (exitValue == 50) {
+			if (exitValue == EsetAntivirusScannerConstants.VIRUS_FOUND) {
 				if (_log.isErrorEnabled()) {
 					_log.error(scanResult);
 				}
@@ -71,7 +63,19 @@ public class EsetAntivirusScannerImpl extends BaseFileAntivirusScanner {
 				throw new AntivirusScannerException(
 					"Virus detected in " + filePath);
 			}
-			else if (exitValue != 0) {
+			else if (exitValue ==
+					EsetAntivirusScannerConstants.CANNOT_SCAN_DOCUMENT) {
+
+				if (_log.isErrorEnabled()) {
+					_log.error(scanResult);
+				}
+
+				throw new AntivirusScannerException(
+					"Couldn't scan file in " + filePath);
+			}
+			else if (exitValue !=
+					EsetAntivirusScannerConstants.VIRUS_NOT_FOUND) {
+
 				if (_log.isErrorEnabled()) {
 					_log.error(scanResult);
 				}
